@@ -9,34 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack{
-            VStack{
-                Color.red
-                Color.white
-            }
-                .ignoresSafeArea()
-            VStack {
-                Spacer()
-                Text("Singapore Rush")
-                    .font(.largeTitle)
-                Spacer()
-                Button{
-                    
-                }label: {
-                    Text("•  Start  •")
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(.red)
-                        .cornerRadius(50)
+        NavigationStack {
+            ZStack{
+                VStack{
+                    Color.red
+                    Color.white
                 }
-                Spacer()
+                .ignoresSafeArea()
+                VStack {
+                    Spacer()
+                    Text("Singapore Rush")
+                        .font(.largeTitle)
+                    Spacer()
+                    NavigationLink(destination:AdventureView()) {
+                        Text("•  Start  •")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(.red)
+                            .cornerRadius(10)
+                    }
+                    Spacer()
+                }
             }
+            
         }
-        
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
