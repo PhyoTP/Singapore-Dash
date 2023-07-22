@@ -25,6 +25,10 @@ struct IntroView: View {
                     .multilineTextAlignment(.center)
                 NavigationLink(destination:OhioView()) {
                     Text("Lets go!")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(.red)
+                        .cornerRadius(10)
                 }
                 
                 
