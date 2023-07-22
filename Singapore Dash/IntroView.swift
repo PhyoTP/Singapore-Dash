@@ -1,5 +1,5 @@
 //
-//  AdventureView.swift
+//  IntroView.swift
 //  Singapore Dash
 //
 //  Created by yoeh iskandar on 22/7/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AdventureView: View {
+struct IntroView: View {
     var body: some View {
         //    Text("Intro page")
         VStack{
@@ -23,11 +23,12 @@ struct AdventureView: View {
                 .multilineTextAlignment(.center)
             
             
+            
         }
     }
 }
-struct AdventureView_Previews: PreviewProvider {
+struct IntroView_Previews: PreviewProvider {
     static var previews: some View {
-        AdventureView()
+        IntroView()
     }
 }

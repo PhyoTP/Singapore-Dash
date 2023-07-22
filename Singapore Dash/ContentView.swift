@@ -21,7 +21,7 @@ struct ContentView: View {
                     Text("Singapore Rush")
                         .font(.largeTitle)
                     Spacer()
-                    NavigationLink(destination:AdventureView()) {
+                    NavigationLink(destination:IntroView()) {
                         Text("•  Start  •")
                             .foregroundColor(.white)
                             .padding()
