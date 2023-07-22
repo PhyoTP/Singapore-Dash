@@ -9,25 +9,43 @@ import SwiftUI
 
 struct OhioView: View {
     @State private var name = ""
-    @State private var showSheet = true
+    @State private var showSheet = false //change later
+    
     var body: some View {
         VStack{
             Text("Home")
                 .font(.largeTitle)
                 .bold()
             Form{
-                HStack{
-                    Text("Name: \(name)")
-                    
+                Section("Name"){
+                    HStack{
+                        Text("Name:")
+                        TextField("YJ Saumil", text: $name)
+                    }
                 }
-                
-            }
-        }
-        .sheet(isPresented: $showSheet){
-            Form{
-                HStack{
-                    Text("Name:")
-                    TextField("YJ Saumil", text: $name)
+                Section("Progress"){
+                    HStack{
+                        Group{
+                            Spacer()
+                            Image(systemName: "circle")
+                            Spacer()
+                            Image(systemName: "circle")
+                            Spacer()
+                            Image(systemName: "circle")
+                            Spacer()
+                        }
+                        Group{
+                            Image(systemName: "circle")
+                            Spacer()
+                            Image(systemName: "circle")
+                            Spacer()
+                            Image(systemName: "circle")
+                            Spacer()
+                            Image(systemName: "circle")
+                            Spacer()
+                        }
+                    }
+                    Text("[insert variable here]/7 complete")
                 }
             }
         }
