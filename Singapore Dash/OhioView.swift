@@ -9,8 +9,6 @@ import SwiftUI
 
 struct OhioView: View {
     @State private var name = ""
-    @State private var showSheet = false //change later
-    
     var body: some View {
         VStack{
             Text("Home")
@@ -47,6 +45,16 @@ struct OhioView: View {
                     }
                     Text("[insert variable here]/7 complete")
                 }
+                Section("Inventory"){
+                    Text("Nothing to see here yet...")
+                }
+            }
+            NavigationLink(destination:QuestionView()) {
+                Text("•  Start  •")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(.red)
+                    .cornerRadius(10)
             }
         }
     }
