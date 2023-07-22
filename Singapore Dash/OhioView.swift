@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct OhioView: View {
+    @State private var name = ""
+    @State private var showSheet = true
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text("Home")
+                .font(.largeTitle)
+                .bold()
+            Form{
+                HStack{
+                    Text("Name: \(name)")
+                    
+                }
+                
+            }
+        }
+        .sheet(isPresented: $showSheet){
+            Form{
+                HStack{
+                    Text("Name:")
+                    TextField("YJ Saumil", text: $name)
+                }
+            }
+        }
     }
 }
 

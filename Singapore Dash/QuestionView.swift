@@ -10,6 +10,12 @@ import SwiftUI
 struct QuestionView: View {
     var body: some View {
         Image("botanic garden")
+            .resizable()
+            .scaledToFit()
+            .cornerRadius(30)
+            .padding()
+        
+            
     }
 }
 
