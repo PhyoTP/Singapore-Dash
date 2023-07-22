@@ -16,6 +16,8 @@ struct AdventureView: View {
             Text("Oh no! Thet Pai and Ingo need to go around Singapore to take photos for their Nursery school project due in one second!")
                 .multilineTextAlignment(.center)
             Text("They need your help to go to famous landmarks of Singapore so that they can get a F-")
+                .multilineTextAlignment(.center)
+            
             
         }
     }

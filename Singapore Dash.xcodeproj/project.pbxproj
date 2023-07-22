@@ -46,6 +46,7 @@
 		D93F5D8D2A6B7D14002AA631 /* Singapore DashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Singapore DashUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93F5D912A6B7D14002AA631 /* Singapore_DashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singapore_DashUITests.swift; sourceTree = "<group>"; };
 		D93F5D932A6B7D14002AA631 /* Singapore_DashUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singapore_DashUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D93F5DA02A6B884C002AA631 /* Singapore-Dash-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Singapore-Dash-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 		D93F5D752A6B7D11002AA631 /* Singapore Dash */ = {
 			isa = PBXGroup;
 			children = (
+				D93F5DA02A6B884C002AA631 /* Singapore-Dash-Info.plist */,
 				D93F5D762A6B7D11002AA631 /* Singapore_DashApp.swift */,
 				D93F5D782A6B7D11002AA631 /* ContentView.swift */,
 				89FC78B12A6B827C00C5C5AE /* AdventureView.swift */,
@@ -423,6 +425,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Singapore Dash/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Singapore-Dash-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -451,6 +454,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Singapore Dash/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Singapore-Dash-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
