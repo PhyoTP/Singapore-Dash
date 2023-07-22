@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		89FC78B22A6B827C00C5C5AE /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC78B12A6B827C00C5C5AE /* IntroView.swift */; };
+		89FC78B82A6B8C4600C5C5AE /* OhioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC78B72A6B8C4600C5C5AE /* OhioView.swift */; };
 		D93F5D772A6B7D11002AA631 /* Singapore_DashApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F5D762A6B7D11002AA631 /* Singapore_DashApp.swift */; };
 		D93F5D792A6B7D11002AA631 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F5D782A6B7D11002AA631 /* ContentView.swift */; };
 		D93F5D7B2A6B7D14002AA631 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93F5D7A2A6B7D14002AA631 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		89FC78B12A6B827C00C5C5AE /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		89FC78B72A6B8C4600C5C5AE /* OhioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhioView.swift; sourceTree = "<group>"; };
 		D93F5D732A6B7D11002AA631 /* Singapore Dash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Singapore Dash.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93F5D762A6B7D11002AA631 /* Singapore_DashApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singapore_DashApp.swift; sourceTree = "<group>"; };
 		D93F5D782A6B7D11002AA631 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				D93F5D762A6B7D11002AA631 /* Singapore_DashApp.swift */,
 				D93F5D782A6B7D11002AA631 /* ContentView.swift */,
 				89FC78B12A6B827C00C5C5AE /* IntroView.swift */,
+				89FC78B72A6B8C4600C5C5AE /* OhioView.swift */,
 				D93F5D7A2A6B7D14002AA631 /* Assets.xcassets */,
 				D93F5D7C2A6B7D14002AA631 /* Preview Content */,
 			);
@@ -265,6 +268,7 @@
 				D93F5D792A6B7D11002AA631 /* ContentView.swift in Sources */,
 				D93F5D772A6B7D11002AA631 /* Singapore_DashApp.swift in Sources */,
 				89FC78B22A6B827C00C5C5AE /* IntroView.swift in Sources */,
+				89FC78B82A6B8C4600C5C5AE /* OhioView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
