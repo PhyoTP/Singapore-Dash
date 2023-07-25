@@ -24,7 +24,7 @@ struct IntroView: View {
                 Text("This is also a speedrun, so its highly encouraged to sweat the living hell off so that they can get demerit points!")
                     .multilineTextAlignment(.center)
                 NavigationLink(destination:OhioView()) {
-                    Text("Lets go!")
+                    Text("LETS DANCE!")
                         .foregroundColor(.white)
                         .padding()
                         .background(.red)
