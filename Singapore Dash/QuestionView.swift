@@ -17,7 +17,7 @@ struct QuestionView: View {
                 answer: 4
             ),
         question(
-                ask: "What type of garden is the National Orchid Garden?",
+                ask: "What type of garden is the National Orchid Garden? (Come on this is bloody obvious)",
                 option1: "Japanese Garden",
                 option2: "Rose Garden",
                 option3: "Orchid Garden",
@@ -41,11 +41,12 @@ struct QuestionView: View {
                 answer: 1)
     ]
     @State private var isImageVisible = true // Add a @State variable to track visibility
-    func button(_ num: Int, colour: Color) -> some View {
+    @State private var wawalord = 0 // tracks number of questions
+    func button(_ text: String, colour: Color, num: Int) -> some View {
         Button {
             print("You tapped button \(num)!")
         } label: {
-            Text("Button \(num)")
+            Text("\(text)")
                 .padding()
                 .foregroundColor(.white)
                 .background(colour)
@@ -54,6 +55,7 @@ struct QuestionView: View {
     var body: some View {
         VStack {
             if isImageVisible {
+                Text("Chapter 1: Botanic Gardens")
                 Image("botanic garden")
                     .resizable()
                     .scaledToFit()
@@ -65,6 +67,27 @@ struct QuestionView: View {
                         }
                     }
             }
+            if isImageVisible == false {
+                Text("\(questions[wawalord].ask)")
+                HStack{
+                    button(questions[wawalord].option1, colour: .red, num: 1)
+                        .scaledToFit()
+                        .padding()
+                    button(questions[wawalord].option2, colour: .blue, num: 2)
+                        .scaledToFit()
+                        .padding()
+                }
+                HStack{
+                    button(questions[wawalord].option3, colour: .green, num: 3)
+                        .scaledToFit()
+                        .padding()
+                    button(questions[wawalord].option4, colour: .yellow, num: 4)
+                        .scaledToFit()
+                        .padding()
+                }
+                
+            }
+            
         }
     }
 }
