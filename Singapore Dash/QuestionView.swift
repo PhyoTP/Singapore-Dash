@@ -1,21 +1,33 @@
-//
-//  QuestionView.swift
-//  Singapore Dash
-//
-//  Created by T Krobot on 22/7/23.
-//
-
 import SwiftUI
 
 struct QuestionView: View {
+    
+    @State private var isImageVisible = true // Add a @State variable to track visibility
+    func button(_ num: Int, colour: Color) -> some View {
+        Button {
+            print("You tapped button \(num)!")
+        } label: {
+            Text("Button \(num)")
+                .padding()
+                .foregroundColor(.white)
+                .background(colour)
+        }
+    }
     var body: some View {
-        Image("botanic garden")
-            .resizable()
-            .scaledToFit()
-            .cornerRadius(30)
-            .padding()
-        
-            
+        VStack {
+            if isImageVisible {
+                Image("botanic garden")
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(30)
+                    .padding()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            isImageVisible = false // Set isImageVisible to false after 3 seconds
+                        }
+                    }
+            }
+        }
     }
 }
 
