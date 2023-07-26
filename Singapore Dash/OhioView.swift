@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OhioView: View {
+    @EnvironmentObject var Inventory: CurrentInventory
     @State private var name = ""
     var body: some View {
         VStack{
@@ -46,22 +47,28 @@ struct OhioView: View {
                     Text("[insert variable here]/7 complete")
                 }
                 Section("Inventory"){
-                    Text("Nothing to see here yet...")
+                    if Inventory.inv[0] == ""{
+                        Text("Nothing to see here yet...")
+                    }else if Inventory.inv[0] == "Badge"{
+                        
+                        Image(systemName: "shield")
+                    }
                 }
             }
-            NavigationLink(destination:QuestionView()) {
-                Text("•  Start  •")
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(.red)
-                    .cornerRadius(10)
+                NavigationLink(destination:QuestionView()) {
+                    Text("•  Start  •")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(.red)
+                        .cornerRadius(10)
+                }
             }
         }
     }
-}
 
 struct OhioView_Previews: PreviewProvider {
     static var previews: some View {
         OhioView()
+            .environmentObject(CurrentInventory())
     }
 }

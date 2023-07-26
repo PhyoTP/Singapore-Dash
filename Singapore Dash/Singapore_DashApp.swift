@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Singapore_DashApp: App {
+    @StateObject private var Inventory = CurrentInventory()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(Inventory)
         }
     }
 }

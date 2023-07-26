@@ -1,6 +1,9 @@
 import SwiftUI
-
+class CurrentInventory: ObservableObject {
+    @Published var inv = [""]
+}
 struct QuestionView: View {
+    @EnvironmentObject var Inventory: CurrentInventory
     var questions = [
         question(ask: "Which is the oldest botanic garden in Singapore?",
                  option1: "Jurong Bird Park",
@@ -40,11 +43,27 @@ struct QuestionView: View {
                 option4: "Bukit Timah Gate",
                 answer: 1)
     ]
+    @State private var correctQuestions = 0
     @State private var isImageVisible = true // Add a @State variable to track visibility
     @State private var wawalord = 0 // tracks number of questions
+    @State private var showSheet = false
     func button(_ text: String, colour: Color, num: Int) -> some View {
         Button {
-            print("You tapped button \(num)!")
+            if wawalord == 4{
+                if num == questions[wawalord].answer{
+                    correctQuestions += 1
+                }
+                showSheet = true
+                if correctQuestions > 2 {
+                    Inventory.inv.insert("Badge", at: 0)
+                }
+            }else{
+                wawalord += 1
+                if num == questions[wawalord].answer{
+                    correctQuestions += 1
+                }
+            }
+            
         } label: {
             Text("\(text)")
                 .padding()
@@ -68,6 +87,7 @@ struct QuestionView: View {
                     }
             }
             if isImageVisible == false {
+                Text("\(correctQuestions)")
                 Text("\(questions[wawalord].ask)")
                 HStack{
                     button(questions[wawalord].option1, colour: .red, num: 1)
@@ -85,7 +105,14 @@ struct QuestionView: View {
                         .scaledToFit()
                         .padding()
                 }
-                
+                .sheet(isPresented: $showSheet){
+                    Text("You got \(correctQuestions) out of 5!!!")
+                    if correctQuestions > 2{
+                        Text("You received: 1x Badge (important later!!!)")
+                    }else{
+                        Text("Inventory unchanged.")
+                    }
+                }
             }
             
         }
@@ -95,5 +122,6 @@ struct QuestionView: View {
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
         QuestionView()
+            .environmentObject(CurrentInventory())
     }
 }
