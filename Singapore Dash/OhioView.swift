@@ -50,8 +50,10 @@ struct OhioView: View {
                     if Inventory.inv[0] == ""{
                         Text("Nothing to see here yet...")
                     }else if Inventory.inv[0] == "Badge"{
-                        
-                        Image(systemName: "shield")
+                        HStack{
+                            Image(systemName: "shield")
+                            Text("1x Badge")
+                        }
                     }
                 }
             }

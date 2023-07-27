@@ -10,39 +10,40 @@ struct QuestionView: View {
                  option2: "Singapore Zoo",
                  option3: "Gardens by the Bay",
                  option4: "Singapore Botanic Gardens",
-        answer: 4),
+                 answer: 4),
         question(
-                ask: "What is the famous landmark inside Singapore Botanic Gardens?",
-                option1: "Supertree Grove",
-                option2: "Cloud Forest",
-                option3: "Swan Lake",
-                option4: "National Orchid Garden",
-                answer: 4
-            ),
+            ask: "What is the famous landmark inside Singapore Botanic Gardens?",
+            option1: "Supertree Grove",
+            option2: "Cloud Forest",
+            option3: "Swan Lake",
+            option4: "National Orchid Garden",
+            answer: 4
+        ),
         question(
-                ask: "What type of garden is the National Orchid Garden? (Come on this is bloody obvious)",
-                option1: "Japanese Garden",
-                option2: "Rose Garden",
-                option3: "Orchid Garden",
-                option4: "Cactus Garden",
-                answer: 3
-            ),
+            ask: "What type of garden is the National Orchid Garden? (Come on this is bloody obvious)",
+            option1: "Japanese Garden",
+            option2: "Rose Garden",
+            option3: "Orchid Garden",
+            option4: "Cactus Garden",
+            answer: 3
+        ),
         question(
-                ask: "Which botanic garden is known for its collection of tropical rainforest trees?",
-                option1: "HortPark",
-                option2: "Chinese Garden",
-                option3: "Botanic Gardens",
-                option4: "Bay East Garden",
-                answer: 3
-            ),
+            ask: "Which botanic garden is known for its collection of tropical rainforest trees?",
+            option1: "HortPark",
+            option2: "Chinese Garden",
+            option3: "Botanic Gardens",
+            option4: "Bay East Garden",
+            answer: 3
+        ),
         question(
-                ask: "What is the main entrance of Singapore Botanic Gardens called?",
-                option1: "Tanglin Gate",
-                option2: "Orchard Gate",
-                option3: "Tyersall Gate",
-                option4: "Bukit Timah Gate",
-                answer: 1)
+            ask: "What is the main entrance of Singapore Botanic Gardens called?",
+            option1: "Tanglin Gate",
+            option2: "Orchard Gate",
+            option3: "Tyersall Gate",
+            option4: "Bukit Timah Gate",
+            answer: 1)
     ]
+    @State private var homeButton = false
     @State private var correctQuestions = 0
     @State private var isImageVisible = true // Add a @State variable to track visibility
     @State private var wawalord = 0 // tracks number of questions
@@ -54,6 +55,7 @@ struct QuestionView: View {
                     correctQuestions += 1
                 }
                 showSheet = true
+                homeButton = true
                 if correctQuestions > 2 {
                     Inventory.inv.insert("Badge", at: 0)
                 }
@@ -112,9 +114,20 @@ struct QuestionView: View {
                     }else{
                         Text("Inventory unchanged.")
                     }
+                    
                 }
+                if homeButton{
+                    NavigationLink(destination:OhioView()) {
+                        Text("Back to home")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(.red)
+                            .cornerRadius(10)
+                    }
+                }
+                    
+                
             }
-            
         }
     }
 }
