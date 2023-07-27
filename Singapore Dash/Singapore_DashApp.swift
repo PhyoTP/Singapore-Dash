@@ -17,3 +17,5 @@ struct Singapore_DashApp: App {
         }
     }
 }
+//environment variables: can be used in every view but needs to add some things
+//dm thet pai if you want to make one
