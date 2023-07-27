@@ -1,47 +1,29 @@
 import SwiftUI
-class CurrentInventory: ObservableObject {
-    @Published var inv = [""]
-}
-struct QuestionView: View {
+
+//copypasted QuestionView for merlion - hongyu
+//how yall think you gonna make subway surfers
+
+struct tempview: View {
     @EnvironmentObject var Inventory: CurrentInventory
     var questions = [
-        question(ask: "Which is the oldest botanic garden in Singapore?",
-                 option1: "Jurong Bird Park",
-                 option2: "Singapore Zoo",
-                 option3: "Gardens by the Bay",
-                 option4: "Singapore Botanic Gardens",
-                 answer: 4),
-        question(
-            ask: "What is the famous landmark inside Singapore Botanic Gardens?",
-            option1: "Supertree Grove",
-            option2: "Cloud Forest",
-            option3: "Swan Lake",
-            option4: "National Orchid Garden",
-            answer: 4
-        ),
-        question(
-            ask: "What type of garden is the National Orchid Garden? (Come on this is bloody obvious)",
-            option1: "Japanese Garden",
-            option2: "Rose Garden",
-            option3: "Orchid Garden",
-            option4: "Cactus Garden",
-            answer: 3
-        ),
-        question(
-            ask: "Which botanic garden is known for its collection of tropical rainforest trees?",
-            option1: "HortPark",
-            option2: "Chinese Garden",
-            option3: "Botanic Gardens",
-            option4: "Bay East Garden",
-            answer: 3
-        ),
-        question(
-            ask: "What is the main entrance of Singapore Botanic Gardens called?",
-            option1: "Tanglin Gate",
-            option2: "Orchard Gate",
-            option3: "Tyersall Gate",
-            option4: "Bukit Timah Gate",
-            answer: 1)
+        question(ask: "The Merlion was relocated in 1977",
+                 option1: "True",
+                 option2: "False",
+                 option3: "",
+                 option4: "",
+                 answer: 2),
+        question(ask: "The Merlion is trademarked",
+                 option1: "True",
+                 option2: "False",
+                 option3: "",
+                 option4: "",
+                 answer: 1),
+        question(ask: "The fish half of the Merlion represents Singapore's history as a trading port",
+                 option1: "False",
+                 option2: "True",
+                 option3: "",
+                 option4: "",
+                 answer: 1)
     ]
     @State private var homeButton = false
     @State private var correctQuestions = 0
@@ -50,14 +32,14 @@ struct QuestionView: View {
     @State private var showSheet = false
     func button(_ text: String, colour: Color, num: Int) -> some View {
         Button {
-            if wawalord == 4{
+            if wawalord == 2{
                 if num == questions[wawalord].answer{
                     correctQuestions += 1
                 }
                 showSheet = true
                 homeButton = true
-                if correctQuestions > 2 {
-                    Inventory.inv.insert("Badge", at: 0)
+                if correctQuestions > 1 {
+                    Inventory.inv.insert("something", at: 0)
                 }
             }else{
                 wawalord += 1
@@ -69,7 +51,8 @@ struct QuestionView: View {
             
         } label: {
             Text("\(text)")
-                .padding()
+                .font(.largeTitle)
+                .padding(40)
                 .foregroundColor(.white)
                 .background(colour)
         }
@@ -77,7 +60,7 @@ struct QuestionView: View {
     var body: some View {
         VStack {
             if isImageVisible {
-                Text("Chapter 1: Botanic Gardens")
+                Text("Chapter 2: Merlion Park")
                 Image("botanic garden")
                     .resizable()
                     .scaledToFit()
@@ -99,19 +82,12 @@ struct QuestionView: View {
                     button(questions[wawalord].option2, colour: .blue, num: 2)
                         .scaledToFit()
                         .padding()
-                }
-                HStack{
-                    button(questions[wawalord].option3, colour: .green, num: 3)
-                        .scaledToFit()
-                        .padding()
-                    button(questions[wawalord].option4, colour: .yellow, num: 4)
-                        .scaledToFit()
-                        .padding()
+    
                 }
                 .sheet(isPresented: $showSheet){
                     Text("You got \(correctQuestions) out of 5!!!")
                     if correctQuestions > 2{
-                        Text("You received: 1x Badge (important later!!!)")
+                        Text("You received: 1x [insert imporatnen item] (important later!!!)")
                     }else{
                         Text("Inventory unchanged.")
                     }
@@ -133,9 +109,10 @@ struct QuestionView: View {
     }
 }
 
-struct QuestionView_Previews: PreviewProvider {
+struct tempview_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView()
+        tempview()
             .environmentObject(CurrentInventory())
     }
 }
+

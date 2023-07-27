@@ -18,6 +18,7 @@
 		D93F5D922A6B7D14002AA631 /* Singapore_DashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F5D912A6B7D14002AA631 /* Singapore_DashUITests.swift */; };
 		D93F5D942A6B7D14002AA631 /* Singapore_DashUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F5D932A6B7D14002AA631 /* Singapore_DashUITestsLaunchTests.swift */; };
 		D93F5DA22A6B8C3F002AA631 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F5DA12A6B8C3F002AA631 /* QuestionView.swift */; };
+		D95058122A72BF10006E1149 /* tempview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95058112A72BF0F006E1149 /* tempview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D93F5D932A6B7D14002AA631 /* Singapore_DashUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singapore_DashUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D93F5DA02A6B884C002AA631 /* Singapore-Dash-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Singapore-Dash-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D93F5DA12A6B8C3F002AA631 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		D95058112A72BF0F006E1149 /* tempview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				D93F5D7A2A6B7D14002AA631 /* Assets.xcassets */,
 				D93F5DA12A6B8C3F002AA631 /* QuestionView.swift */,
 				892158AA2A6FDF1A005EBC9C /* Question.swift */,
+				D95058112A72BF0F006E1149 /* tempview.swift */,
 				D93F5D7C2A6B7D14002AA631 /* Preview Content */,
 			);
 			path = "Singapore Dash";
@@ -273,6 +276,7 @@
 			files = (
 				D93F5DA22A6B8C3F002AA631 /* QuestionView.swift in Sources */,
 				D93F5D792A6B7D11002AA631 /* ContentView.swift in Sources */,
+				D95058122A72BF10006E1149 /* tempview.swift in Sources */,
 				D93F5D772A6B7D11002AA631 /* Singapore_DashApp.swift in Sources */,
 				892158AB2A6FDF1A005EBC9C /* Question.swift in Sources */,
 				89FC78B22A6B827C00C5C5AE /* IntroView.swift in Sources */,
