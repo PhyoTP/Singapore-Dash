@@ -18,7 +18,7 @@ struct ContentView: View {
                 .ignoresSafeArea()
                 VStack {
                     Spacer()
-                    Text("Singapore Rush")
+                    Text("Singapore Dash")
                         .font(.largeTitle)
                     Spacer()
                     NavigationLink(destination:IntroView()) {

@@ -40,7 +40,7 @@ struct QuestionView: View {
             option1: "Tanglin Gate",
             option2: "Orchard Gate",
             option3: "Tyersall Gate",
-            option4: "Bukit Timah Gate",
+            option4: "All glory to the soon",
             answer: 1)
     ]
     @State private var homeButton = false
