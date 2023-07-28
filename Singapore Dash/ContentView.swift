@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @StateObject var globalData = GlobalData()
+    
     var body: some View {
+
         NavigationStack {
             ZStack{
+                QuestionView()
+                    .environmentObject(globalData)
+                OhioView()
+                    .environmentObject(globalData)
+                tempview()
+                    .environmentObject(globalData)
                 VStack{
                     Color.red
                     Color.white

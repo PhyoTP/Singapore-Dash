@@ -4,6 +4,7 @@ class CurrentInventory: ObservableObject {
 }
 struct QuestionView: View {
     @EnvironmentObject var Inventory: CurrentInventory
+    @EnvironmentObject var globalData: GlobalData
     var questions = [
         question(ask: "Which is the oldest botanic garden in Singapore?",
                  option1: "Jurong Bird Park",
@@ -112,8 +113,10 @@ struct QuestionView: View {
                     Text("You got \(correctQuestions) out of 5!!!")
                     if correctQuestions > 2{
                         Text("You received: 1x Badge (important later!!!)")
+                    //    globalData.questionTrack += 1
                     }else{
-                        Text("Inventory unchanged.")
+                        Text("Inventory unchanged.");
+                    //    globalData.questionTrack += 1
                     }
                     
                 }

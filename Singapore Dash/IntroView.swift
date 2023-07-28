@@ -15,7 +15,7 @@ struct IntroView: View {
                 Text("Intro to the game")
                     .font(.system(size: 46))
                     .offset(y: -100)
-                Text("Oh no! Thet Pai and Ingo need to go around Singapore to take photos for their Nursery school project due in one second!")
+                Text("Oh no! Thet Pai, Hong yu Ingo need to go around Singapore to take photos for their Nursery school project due in one second!")
                     .multilineTextAlignment(.center)
                 Text("They need your help to go to famous landmarks of Singapore so that they can get a Fantastic F- on their project to find their father.")
                     .multilineTextAlignment(.center)

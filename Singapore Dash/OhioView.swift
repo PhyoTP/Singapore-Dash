@@ -44,7 +44,7 @@ struct OhioView: View {
                             Spacer()
                         }
                     }
-                    Text("[insert variable here]/7 complete")
+        //            Text("\(chapterTracker)/7 complete")
                 }
                 Section("Inventory"){
                     if Inventory.inv[0] == ""{
