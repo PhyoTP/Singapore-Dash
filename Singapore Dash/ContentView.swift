@@ -8,19 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-
-    @StateObject var globalData = GlobalData()
     
     var body: some View {
-
-        NavigationStack {
+        NavigationStack{
             ZStack{
-                QuestionView()
-                    .environmentObject(globalData)
-                OhioView()
-                    .environmentObject(globalData)
-                tempview()
-                    .environmentObject(globalData)
                 VStack{
                     Color.red
                     Color.white
@@ -31,6 +22,7 @@ struct ContentView: View {
                     Text("Singapore Dash")
                         .font(.largeTitle)
                     Spacer()
+                    
                     NavigationLink(destination:IntroView()) {
                         Text("•  Start  •")
                             .foregroundColor(.white)
@@ -38,10 +30,10 @@ struct ContentView: View {
                             .background(.red)
                             .cornerRadius(10)
                     }
+                    
                     Spacer()
                 }
             }
-            
         }
     }
 }
@@ -49,5 +41,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(CurrentInventory())
+            .environmentObject(ChapterTracker())
     }
 }

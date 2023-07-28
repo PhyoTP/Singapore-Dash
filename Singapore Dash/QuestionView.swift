@@ -4,7 +4,7 @@ class CurrentInventory: ObservableObject {
 }
 struct QuestionView: View {
     @EnvironmentObject var Inventory: CurrentInventory
-    @EnvironmentObject var globalData: GlobalData
+    @EnvironmentObject var chap: ChapterTracker
     var questions = [
         question(ask: "Which is the oldest botanic garden in Singapore?",
                  option1: "Jurong Bird Park",
@@ -44,10 +44,10 @@ struct QuestionView: View {
             option4: "All glory to the soon",
             answer: 1)
     ]
-    @State private var homeButton = false
     @State private var correctQuestions = 0
     @State private var isImageVisible = true // Add a @State variable to track visibility
     @State private var wawalord = 0 // tracks number of questions
+    @State private var questionDone = false
     @State private var showSheet = false
     func button(_ text: String, colour: Color, num: Int) -> some View {
         Button {
@@ -55,11 +55,12 @@ struct QuestionView: View {
                 if num == questions[wawalord].answer{
                     correctQuestions += 1
                 }
+                questionDone = true
                 showSheet = true
-                homeButton = true
                 if correctQuestions > 2 {
                     Inventory.inv.insert("Badge", at: 0)
                 }
+                chap.chapterTracker += 1
             }else{
                 wawalord += 1
                 if num == questions[wawalord-1].answer{
@@ -90,47 +91,57 @@ struct QuestionView: View {
                         }
                     }
             }
-            if isImageVisible == false {
-                Text("\(correctQuestions)")
-                Text("\(questions[wawalord].ask)")
-                HStack{
-                    button(questions[wawalord].option1, colour: .red, num: 1)
-                        .scaledToFit()
-                        .padding()
-                    button(questions[wawalord].option2, colour: .blue, num: 2)
-                        .scaledToFit()
-                        .padding()
-                }
-                HStack{
-                    button(questions[wawalord].option3, colour: .green, num: 3)
-                        .scaledToFit()
-                        .padding()
-                    button(questions[wawalord].option4, colour: .yellow, num: 4)
-                        .scaledToFit()
-                        .padding()
-                }
-                .sheet(isPresented: $showSheet){
-                    Text("You got \(correctQuestions) out of 5!!!")
-                    if correctQuestions > 2{
-                        Text("You received: 1x Badge (important later!!!)")
-                    //    globalData.questionTrack += 1
-                    }else{
-                        Text("Inventory unchanged.");
-                    //    globalData.questionTrack += 1
-                    }
-                    
-                }
-                if homeButton{
-                    NavigationLink(destination:OhioView()) {
-                        Text("Back to home")
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(.red)
-                            .cornerRadius(10)
-                    }
-                }
-                    
+            if !isImageVisible {
                 
+                Text("")
+                    .sheet(isPresented: $showSheet){
+                        Image("botanic garden complete")
+                            .resizable()
+                            .scaledToFit()
+                            .cornerRadius(30)
+                            .padding()
+                        Text("You got \(correctQuestions) out of 5!!!")
+                        if correctQuestions > 2{
+                            Text("You received: 1x Badge (important later!!!)")
+                        //    globalData.questionTrack += 1
+                        }else{
+                            Text("Inventory unchanged.");
+                        //    globalData.questionTrack += 1
+                        }
+                        
+                    }
+
+                if !questionDone{
+                    Text("\(correctQuestions)")
+                    Text("\(questions[wawalord].ask)")
+                        .multilineTextAlignment(.center)
+                    HStack{
+                        button(questions[wawalord].option1, colour: .red, num: 1)
+                            .scaledToFit()
+                            .padding()
+                        button(questions[wawalord].option2, colour: .blue, num: 2)
+                            .scaledToFit()
+                            .padding()
+                    }
+                    HStack{
+                        button(questions[wawalord].option3, colour: .green, num: 3)
+                            .scaledToFit()
+                            .padding()
+                        button(questions[wawalord].option4, colour: .yellow, num: 4)
+                            .scaledToFit()
+                            .padding()
+                    }
+                }
+            }
+            
+        }
+        if questionDone{
+            NavigationLink(destination:OhioView()) {
+                Text("Back to home")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(.red)
+                    .cornerRadius(10)
             }
         }
     }
@@ -140,5 +151,6 @@ struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
         QuestionView()
             .environmentObject(CurrentInventory())
+            .environmentObject(ChapterTracker())
     }
 }

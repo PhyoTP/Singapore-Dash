@@ -3,7 +3,7 @@ import SwiftUI
 //copypasted QuestionView for merlion - hongyu
 //how yall think you gonna make subway surfers
 
-struct tempview: View {
+struct MerlionQuestionView: View {
     @EnvironmentObject var Inventory: CurrentInventory
     var questions = [
         question(ask: "The Merlion was relocated in 1977",
@@ -111,7 +111,7 @@ struct tempview: View {
 
 struct tempview_Previews: PreviewProvider {
     static var previews: some View {
-        tempview()
+        MerlionQuestionView()
             .environmentObject(CurrentInventory())
     }
 }

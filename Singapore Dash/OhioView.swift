@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
-
+class ChapterTracker: ObservableObject {
+    @Published var chapterTracker: Int = 0
+}
 struct OhioView: View {
+    
     @EnvironmentObject var Inventory: CurrentInventory
+    @EnvironmentObject var chap: ChapterTracker
     @State private var name = ""
     var body: some View {
         VStack{
@@ -24,27 +28,15 @@ struct OhioView: View {
                 }
                 Section("Progress"){
                     HStack{
-                        Group{
-                            Spacer()
-                            Image(systemName: "circle")
-                            Spacer()
-                            Image(systemName: "circle")
-                            Spacer()
-                            Image(systemName: "circle")
-                            Spacer()
-                        }
-                        Group{
-                            Image(systemName: "circle")
-                            Spacer()
-                            Image(systemName: "circle")
-                            Spacer()
-                            Image(systemName: "circle")
-                            Spacer()
-                            Image(systemName: "circle")
-                            Spacer()
-                        }
+                        Spacer()
+                        Image(systemName: chap.chapterTracker > 0 ?  "checkmark.circle": "circle")
+                        Spacer()
+                        Image(systemName: chap.chapterTracker > 1 ?  "checkmark.circle": "circle")
+                        Spacer()
+                        Image(systemName: chap.chapterTracker > 2 ?  "checkmark.circle": "circle")
+                        Spacer()
                     }
-        //            Text("\(chapterTracker)/7 complete")
+                    Text("\(chap.chapterTracker)/3 complete")
                 }
                 Section("Inventory"){
                     if Inventory.inv[0] == ""{
@@ -57,6 +49,15 @@ struct OhioView: View {
                     }
                 }
             }
+            if chap.chapterTracker > 0{
+                NavigationLink(destination:MerlionQuestionView()) {
+                    Text("•  Next  •")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(.red)
+                        .cornerRadius(10)
+                }
+            }else if chap.chapterTracker == 0{
                 NavigationLink(destination:QuestionView()) {
                     Text("•  Start  •")
                         .foregroundColor(.white)
@@ -67,10 +68,13 @@ struct OhioView: View {
             }
         }
     }
+}
 
 struct OhioView_Previews: PreviewProvider {
     static var previews: some View {
         OhioView()
             .environmentObject(CurrentInventory())
+            .environmentObject(ChapterTracker())
+        
     }
 }
