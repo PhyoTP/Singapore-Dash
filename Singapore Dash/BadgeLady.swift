@@ -29,16 +29,16 @@ struct BadgeLady: View {
                             sna = false
                         }
                 }
-                if sna == false {
-                    if (Inventory.inv[0] == "Badge") {
-                        Text("I will let you go, since you appear to have a badge.")
-                        Text("Here, take this nutella with you.")
-                    }else{
-                        Text("You don't have the badge? Then you have to answer this for the nutella.")
-                    }
-                    
             }
-            }
+            if sna == false {
+                if (Inventory.inv[0] == "Badge") {
+                    Text("I will let you go, since you appear to have a badge.")
+                    Text("Here, take this nutella with you.")
+                }else{
+                    Text("You don't have the badge? Then you have to answer this questions for the nutella.")
+                }
+                
+        }
         }
     }
 }
