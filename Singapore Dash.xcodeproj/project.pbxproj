@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8919674F2A74A385004CEB6A /* BadgeLady.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8919674E2A74A385004CEB6A /* BadgeLady.swift */; };
 		892158AB2A6FDF1A005EBC9C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892158AA2A6FDF1A005EBC9C /* Question.swift */; };
 		8970A37C2A738AC000C07E71 /* QuestionTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8970A37B2A738AC000C07E71 /* QuestionTracker.swift */; };
 		89FC78B22A6B827C00C5C5AE /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC78B12A6B827C00C5C5AE /* IntroView.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8919674E2A74A385004CEB6A /* BadgeLady.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLady.swift; sourceTree = "<group>"; };
 		892158AA2A6FDF1A005EBC9C /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		8970A37B2A738AC000C07E71 /* QuestionTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTracker.swift; sourceTree = "<group>"; };
 		89FC78B12A6B827C00C5C5AE /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				892158AA2A6FDF1A005EBC9C /* Question.swift */,
 				D93F5DA12A6B8C3F002AA631 /* QuestionView.swift */,
 				D95058112A72BF0F006E1149 /* MerlionQuestionView.swift */,
+				8919674E2A74A385004CEB6A /* BadgeLady.swift */,
 				D93F5D7A2A6B7D14002AA631 /* Assets.xcassets */,
 				D93F5D7C2A6B7D14002AA631 /* Preview Content */,
 			);
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8919674F2A74A385004CEB6A /* BadgeLady.swift in Sources */,
 				D93F5DA22A6B8C3F002AA631 /* QuestionView.swift in Sources */,
 				D93F5D792A6B7D11002AA631 /* ContentView.swift in Sources */,
 				D95058122A72BF10006E1149 /* MerlionQuestionView.swift in Sources */,

@@ -23,7 +23,7 @@ struct OhioView: View {
                 Section("Name"){
                     HStack{
                         Text("Name:")
-                        TextField("YJ Saumil", text: $name)
+                        TextField("YJ Saumil HAOOOOO", text: $name)
                     }
                 }
                 Section("Progress"){

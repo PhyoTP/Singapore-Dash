@@ -16,7 +16,7 @@ struct MerlionQuestionView: View {
                  option1: "True",
                  option2: "False",
                  option3: "Don't select (You simply get wrong)",
-                 option4: "Don't select (You simply get wrong)",
+                 option4: "Don't select ",
                  answer: 1),
         question(ask: "The fish half of the Merlion represents Singapore's history as a trading port",
                  option1: "False",
