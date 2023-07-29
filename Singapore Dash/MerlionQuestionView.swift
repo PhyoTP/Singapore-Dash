@@ -5,6 +5,7 @@ import SwiftUI
 
 struct MerlionQuestionView: View {
     @EnvironmentObject var Inventory: CurrentInventory
+    @EnvironmentObject var chap: ChapterTracker
     var questions = [
         question(ask: "The Merlion was relocated in 1977",
                  option1: "True",
@@ -41,7 +42,7 @@ struct MerlionQuestionView: View {
                 showSheet = true
                 homeButton = true
                 if correctQuestions > 1 {
-                    Inventory.inv.insert("something", at: 0)
+                    chap.chapterTracker += 1
                 }
             }else{
                 wawalord += 1
@@ -74,22 +75,25 @@ struct MerlionQuestionView: View {
                         }
                     }
             }
-            if isImageVisible == false {
-                Text("\(correctQuestions)")
-                Text("\(questions[wawalord].ask)")
-                HStack{
-                    button(questions[wawalord].option1, colour: .red, num: 1)
-                        .scaledToFit()
-                        .padding()
-                    button(questions[wawalord].option2, colour: .blue, num: 2)
-                        .scaledToFit()
-                        .padding()
-    
+            if !isImageVisible {
+                if !homeButton{
+                    Text("\(correctQuestions)")
+                    Text("\(questions[wawalord].ask)")
+                    HStack{
+                        button(questions[wawalord].option1, colour: .red, num: 1)
+                            .scaledToFit()
+                            .padding()
+                        button(questions[wawalord].option2, colour: .blue, num: 2)
+                            .scaledToFit()
+                            .padding()
+                        
+                    }
                 }
+                Text("")
                 .sheet(isPresented: $showSheet){
                     Text("You got \(correctQuestions) out of 3!!!")
                     if correctQuestions > 1{
-                        Text("You survived.")
+                        Text("You survived the preview crash.")
                     }else{
                         Image("ingo musk")
                             .resizable()
@@ -126,6 +130,7 @@ struct MerlionQuestionView_Previews: PreviewProvider {
     static var previews: some View {
         MerlionQuestionView()
             .environmentObject(CurrentInventory())
+            .environmentObject(ChapterTracker())
     }
 }
 
