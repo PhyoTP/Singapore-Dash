@@ -15,7 +15,7 @@ struct BadgeLady: View {
                                   option3: "S.A.U.M.I.L",
                                   option4: "SHINE YOUR LIGHT",
                                   answer: 4)]
-    var sna = true
+    @State var sna = true
     var body: some View {
         VStack{
             if sna{
@@ -24,19 +24,29 @@ struct BadgeLady: View {
                 Image("BADGE LADY")
                     .scaledToFit()
                 //           .resizable()
-                if (Inventory.inv[0] == "Badge") {
-                    Text("I will let you go, since you appear to have a badge.")
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                            sna = false
+                        }
+                        if sna == false {
+                            if (Inventory.inv[0] == "Badge") {
+                                Text("I will let you go, since you appear to have a badge.")
+                                Text("Here, take this nutella with you.")
+                            }else{
+                                Text("You don't have the badge? Then you have to answer this for the nutella.")
+                            }
+                            
+                    }
                 }
             }
-
-            
-        }
-    }
-    
-    struct BadgeLady_Previews: PreviewProvider {
-        static var previews: some View {
-            BadgeLady()
-                .environmentObject(CurrentInventory())
         }
     }
 }
+            struct BadgeLady_Previews: PreviewProvider {
+                static var previews: some View {
+                    BadgeLady()
+                        .environmentObject(CurrentInventory())
+                }
+            }
+        
+    
