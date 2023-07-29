@@ -30,6 +30,7 @@ struct MerlionQuestionView: View {
     @State private var isImageVisible = true // Add a @State variable to track visibility
     @State private var wawalord = 0 // tracks number of questions
     @State private var showSheet = false
+    var num = [1]
     func button(_ text: String, colour: Color, num: Int) -> some View {
         Button {
             if wawalord == 2{
@@ -61,7 +62,7 @@ struct MerlionQuestionView: View {
         VStack {
             if isImageVisible {
                 Text("Chapter 2: Merlion Park")
-                Image("botanic garden")
+                Image("merlion")
                     .resizable()
                     .scaledToFit()
                     .cornerRadius(30)
@@ -85,11 +86,17 @@ struct MerlionQuestionView: View {
     
                 }
                 .sheet(isPresented: $showSheet){
-                    Text("You got \(correctQuestions) out of 5!!!")
-                    if correctQuestions > 2{
-                        Text("You received: 1x [insert imporatnen item] (important later!!!)")
+                    Text("You got \(correctQuestions) out of 3!!!")
+                    if correctQuestions > 1{
+                        Text("You survived.")
                     }else{
-                        Text("Inventory unchanged.")
+                        Image("ingo musk")
+                            .resizable()
+                            .scaledToFit()
+                            .cornerRadius(30)
+                            .padding()
+                        Text("You died.")
+                        Text("\(num[1])")
                     }
                     
                 }
@@ -109,7 +116,7 @@ struct MerlionQuestionView: View {
     }
 }
 
-struct tempview_Previews: PreviewProvider {
+struct MerlionQuestionView_Previews: PreviewProvider {
     static var previews: some View {
         MerlionQuestionView()
             .environmentObject(CurrentInventory())
