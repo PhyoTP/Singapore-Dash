@@ -7,19 +7,31 @@ struct MerlionQuestionView: View {
     @EnvironmentObject var Inventory: CurrentInventory
     @EnvironmentObject var chap: ChapterTracker
     var questions = [
-        question(ask: "The Merlion was relocated in 1977",
+        question(ask: "The Merlion was relocated in 1977.",
                  option1: "True",
                  option2: "False",
                  option3: "",
                  option4: "",
                  answer: 2),
-        question(ask: "The Merlion is trademarked",
+        question(ask: "The fish half of the Merlion represents Singapore's history as a trading port.",
+                 option1: "False",
+                 option2: "True",
+                 option3: "",
+                 option4: "",
+                 answer: 1),
+        question(ask: "The Merlion can be found in other countries.",
+                 option1: "False",
+                 option2: "True",
+                 option3: "",
+                 option4: "",
+                 answer: 2),
+        question(ask: "The Merlion is trademarked.",
                  option1: "True",
                  option2: "False",
                  option3: "Don't select (You simply get wrong)",
                  option4: "Don't select (You simply get wrong)",
                  answer: 1),
-        question(ask: "The fish half of the Merlion represents Singapore's history as a trading port",
+        question(ask: "Merly was introduced along wth Lyo in the 2010 Winter Olympics.",
                  option1: "False",
                  option2: "True",
                  option3: "",
@@ -35,7 +47,7 @@ struct MerlionQuestionView: View {
     @State private var cheese = 0
     func button(_ text: String, colour: Color, num: Int) -> some View {
         Button {
-            if wawalord == 2{
+            if wawalord == 4{
                 if num == questions[wawalord].answer{
                     correctQuestions += 1
                 }
