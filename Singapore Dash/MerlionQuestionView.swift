@@ -31,6 +31,7 @@ struct MerlionQuestionView: View {
     @State private var wawalord = 0 // tracks number of questions
     @State private var showSheet = false
     var num = [1]
+    @State private var cheese = 0
     func button(_ text: String, colour: Color, num: Int) -> some View {
         Button {
             if wawalord == 2{
@@ -95,8 +96,13 @@ struct MerlionQuestionView: View {
                             .scaledToFit()
                             .cornerRadius(30)
                             .padding()
+                            .onAppear {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                    cheese = num[1]
+                                }
+                            }
                         Text("You died.")
-                        Text("\(num[1])")
+                        Text("\(cheese)")
                     }
                     
                 }
